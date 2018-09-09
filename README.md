@@ -7,3 +7,7 @@ https://www.linkedin.com/in/manuel-scarapazzi-514868118/
 
 ## Take a tour
 http://www.doodlepain.me/
+
+## Preview
+
+![](homepage.gif)
