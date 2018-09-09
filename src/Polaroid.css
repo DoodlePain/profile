@@ -1,0 +1,366 @@
+.Container{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 100px;
+    grid-template-areas: 
+      "a a b b c c"
+      "d d e e f f"
+      "d d e e f f"
+      "g g h h i i"
+      "g g h h i i";
+    align-items: start;
+}
+
+.Wrapper{
+    width: 400px;
+    height: 400px;
+    border-radius: 25px;
+    background: white;
+    grid-area: e;
+    margin-left: 150px;
+    transition: 2s;
+    z-index: 1;
+}
+
+.Wrapper::after{
+    content: "";
+    width: 100px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.5);
+    transform: rotate(90deg);
+    margin-top: 250px;
+    margin-left: 150px;
+    -webkit-clip-path: ellipse(25% 50% at 50% 50%);
+    clip-path: ellipse(25% 50% at 50% 50%);
+    position: absolute;
+}
+
+@-webkit-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
+  }
+
+.redDot{
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background: rgba(255, 44, 44, 0.907);
+    margin-top: 90px;
+    margin-left: 25px;
+    -webkit-animation :blinker infinite 1s  ;
+    -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
+    position: absolute;
+}
+
+.Objective{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(162, 62, 0, 1);
+    margin-top: 20px;
+    position: absolute;
+    margin-left: 80px;
+    z-index: 9;
+    top: 200px;
+}
+
+.firstLayer,.secondLayer,.thirdLayer,.fourthLayer,.fifthLayer{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 1);
+    margin-top: 23px;
+    margin-left: 26px;
+    z-index: 10;
+}
+
+.secondLayer{
+    width: 190px;
+    height: 190px;
+    margin: 5px 5px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.thirdLayer{
+    width: 160px;
+    height: 160px;
+    margin: 15px 15px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.fourthLayer{
+    width: 100px;
+    height: 100px;
+    margin: 30px 30px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.fifthLayer{
+    width: 30px;
+    height: 30px;
+    margin: 35px 35px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.firstLine,.secondLine,.thirdLine,.fourthLine,.fifthLine,.sixthLine{
+    width: 400px;
+    height: 33.33px;
+    background: #D80D8D;
+    position: absolute;
+    z-index: 3;
+    margin-top: 44px;
+    top: 200px;
+}
+
+.secondLine{
+    background: #E48E27;
+    margin-top: 77px;
+}
+
+.thirdLine{
+    margin-top: 110px;
+    background: #FFC60A;
+}
+
+.fourthLine{
+    margin-top: 143px;
+    background: #E7E871;
+}
+
+.fifthLine{
+    margin-top: 176px;
+    background: #6DB140;
+}
+
+.sixthLine{
+    margin-top: 209px;
+    background: #0096D5;
+}
+
+
+.flashLight{
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.25);
+    margin: 20px 20px;
+    border: 2px rgba(0, 0, 0, 0.25) solid;
+}
+
+.innerFlash{
+    position: absolute;
+    width: 80%;
+    height: 3px;
+    background: white;
+    margin-top: 22px;
+    margin-left: 10px;
+}
+
+.innerFlash::before,.innerFlash::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: white;
+    margin-top: 22px;
+    margin-left: 0px;
+}
+
+.innerFlash::before{
+    margin-top: -10px;
+}
+
+.innerFlash::after{
+    margin-top: 10px;
+}
+
+@font-face {
+    font-family: 'polaroid';
+    src: url('polaroid.ttf')
+}
+@font-face {
+    font-family: 'Rudiment';
+    src: url('Rudiment.ttf')
+}
+
+button{
+    width: 80px;
+    height: 50px;
+    background: rgb(40, 40, 40);
+    position: absolute;
+    border-radius: 10px;
+    margin-left: 290px;
+    margin-top: 20px;
+    border: 0px;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.fireButtonShadow{
+    width: 80px;
+    height: 50px;
+    background: rgb(82, 82, 82);
+    position: absolute;
+    border-radius: 10px;
+    margin-left: 290px;
+    margin-top: 30px;
+    border: 0px;
+    color: white;
+    z-index: 9;
+}
+
+button:hover{
+    background: rgb(23, 23, 23);
+    box-shadow: 0px 10px 0px 0px rgba(0,0,0,0);
+    margin-top: 30px;
+    transition: 0.5s ;
+}
+
+button:focus{
+    border: none;
+}
+
+.flash{ 
+    position:fixed; 
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:#fff;
+    opacity: 0%;
+    -webkit-animation: cameraFlash 0.5s;  /* Safari 4.0 - 8.0 */
+    -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+    animation: cameraFlash 1s;
+    animation-fill-mode: forwards;
+    z-index: 100;
+}
+ 
+@-webkit-keyframes cameraFlash {
+    0% {   
+        background-color:rgba(40, 40, 40,0);
+        display: none;
+    }
+    1% {   
+        background-color:rgba(255, 255, 255,1);
+    }
+    100%{
+        background-color:rgba(40, 40, 40,0);
+        z-index: -10;
+    }
+}
+
+.WrapperLeft{
+    width: 400px;
+    height: 400px;
+    border-radius: 25px;
+    background: white;
+    grid-area: e;
+    transition: 2s;
+    z-index: 1;
+    margin-left: -100px;
+}
+
+.profile{
+    width: 400px;
+    height: 400px;
+    border-radius: 25px;
+    background: white;
+    grid-area: e;
+    margin-left: 150px;
+    transition: 2s;
+    z-index: -3;
+}
+
+.profileRight{
+    width: 400px;
+    height: 400px;
+    border-radius: 25px;
+    background: white;
+    grid-area: e;
+    margin-left: 350px;
+    transition: 2s;
+    z-index: -3;
+}
+
+
+.photo{
+    background: black;
+    margin-top: 20px;
+    opacity: 100%;
+    width: 330px;
+    margin-left: 35px;
+    z-index: -1;
+    position: absolute;
+    height: 300px;
+    -webkit-animation: PhotoAnim 5s;  /* Safari 4.0 - 8.0 */
+    -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+    animation: PhotoAnim 5s;
+    animation-fill-mode: forwards;
+}
+
+.image{
+    margin-top: 20px;
+    opacity: 100%;
+    width: 330px;
+    margin-left: 35px;
+    position: absolute;
+    z-index: -2;
+    height: 300px;
+}
+
+.showImage{
+    margin-top: 20px;
+    opacity: 100%;
+    width: 330px;
+    margin-left: 35px;
+    position: absolute;
+    z-index: -2;
+    height: 300px;
+}
+
+@-webkit-keyframes PhotoAnim {
+    from {
+        opacity: 100%;
+    }
+    to {
+        background: rgba(0,0,0,0)
+    }
+}
+
+.first{
+    position: absolute;
+    font-family: 'Rudiment';
+    margin-top: 325px;
+    margin-left: 20px;
+    font-size: 25px;
+    color: rgba(0,0,0,0.7);
+}
+
+.second{
+    position: absolute;
+    font-family: 'Rudiment';
+    margin-top: 347px;
+    margin-left: 20px;
+    font-size: 25px;
+    color: rgba(0,0,0,0.7);
+}
+
+.third{
+    transform: rotate(20deg);
+    position: absolute;
+    font-family: 'Rudiment';
+    margin-top: 40px;
+    margin-left: 240px;
+    font-size: 35px;
+    color: white;
+}
+
