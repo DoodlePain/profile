@@ -6,7 +6,7 @@ Give a look to my Linkedin profile too:
 https://www.linkedin.com/in/manuel-scarapazzi-514868118/  
 
 ## Take a tour
-http://www.doodlepain.me/
+http://www.doodlepain.me/profile/
 
 ## Preview
 
