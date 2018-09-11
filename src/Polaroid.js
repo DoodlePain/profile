@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Polaroid.css";
-import ProfilePhoto from "./Profile.png";
 import { SocialIcon } from "react-social-icons";
 
 class Polaroid extends Component {
@@ -26,7 +25,7 @@ class Polaroid extends Component {
               });
             }}
           >
-            {" "}
+            Press
           </button>
           <button className="fireButtonShadow"> </button>
           <div className="firstLine" />
@@ -55,11 +54,7 @@ class Polaroid extends Component {
             this.setState({ rotate: !this.state.rotate });
           }}
         >
-          <img
-            className={this.state.flashActive ? "image" : "showImage"}
-            src={ProfilePhoto}
-            alt="That's my face :)"
-          />
+          <div className={this.state.flashActive ? "image" : "showImage"} />
           <div className={this.state.flashActive ? "photo" : "photoShow"} />
           <h1 className="first">Hello, I'm Manuel :)</h1>
           <h1 className="second">I'm a Full-Stack developer</h1>
@@ -71,7 +66,7 @@ class Polaroid extends Component {
             this.setState({ rotate: !this.state.rotate });
           }}
         >
-          <h1 className="firstBack">
+          <h1 className={this.state.rotate ? "firstBack" : "hidden"}>
             I'm a young Web Developer from Rome, Italy.
             <br />
             I'm studying Computer Science at Tor Vergata University in Rome.
@@ -81,7 +76,7 @@ class Polaroid extends Component {
             <br />
             but I'm very flexible and not afraid to try anything else.
           </h1>
-          <h1 className="secondBack">
+          <h1 className={this.state.rotate ? "secondBack" : "hidden"}>
             Contact me :)
             <br />
             Manuel Scarapazzi

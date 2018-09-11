@@ -190,7 +190,7 @@
     src: url('Rudiment.ttf')
 }
 
-button{
+.fireButton{
     width: 80px;
     height: 50px;
     background: rgb(40, 40, 40);
@@ -203,6 +203,9 @@ button{
     cursor: pointer;
     transition: 0.5s;
     outline: none;
+    font-family: 'Handwrite';
+    font-weight: bold;
+    font-size: 20px;
     z-index: 10;
 }
 
@@ -219,7 +222,7 @@ button{
     z-index: 9;
 }
 
-button:hover{
+.fireButton:hover{
     background: rgb(23, 23, 23);
     box-shadow: 0px 10px 0px 0px rgba(0,0,0,0);
     margin-top: 30px;
@@ -317,16 +320,25 @@ button:focus{
     position: absolute;
     z-index: -2;
     height: 300px;
+    background-image: url("./Profile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
 }
 
 .showImage{
     margin-top: 20px;
+    opacity: 0%;
     opacity: 100%;
     width: 330px;
     margin-left: 35px;
     position: absolute;
     z-index: -2;
     height: 300px;
+    background-image: url("./Profile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
 }
 
 @-webkit-keyframes PhotoAnim {
@@ -361,14 +373,14 @@ button:focus{
     position: absolute;
     font-family: 'Handwrite';
     margin-top: 40px;
-    margin-left: 240px;
+    margin-left: 280px;
     font-size: 35px;
     color: white;
     cursor: pointer;
 }
 
 #normalCard{
-    transform: rotateY(0);
+    transform: rotateY(360deg);
     transition: 2s;
 }
 
@@ -377,16 +389,31 @@ button:focus{
     transition: 2s;
 }
 
+@-webkit-keyframes ShowThings {
+    0% { opacity: 0; 
+        transform: rotateY(230deg); }
+    50% {
+        opacity: 1
+    }
+    100% { opacity: 1.0; 
+        transform: rotateY(360deg);  }
+}
+
 .hidden{
     transform: rotateY(180deg);    
-    transition: 2s;
-    z-index: 0;
-    opacity: 0%;
     display: none;
+    width: 400px;
+    height: 400px;
+    border-radius: 25px;
+    background: white;
+    grid-area: e;
+    margin-left: 350px;
+    z-index: 11;
+    cursor: pointer;
+    transition: 0.1s;
 }
 
 .backCard{
-    opacity: 100%;
     transform: rotateY(0);
     width: 400px;
     height: 400px;
@@ -394,10 +421,10 @@ button:focus{
     background: white;
     grid-area: e;
     margin-left: 350px;
-    transition: 2s;
     z-index: 11;
     cursor: pointer;
     transition: 2s;
+    -webkit-animation :ShowThings 1.95s  ;
 }
 
 .firstBack{
@@ -408,6 +435,7 @@ button:focus{
     font-size: 25px;
     line-height: 150%;
     color: rgba(0,0,0,0.7);
+    -webkit-animation :ShowThings 1.95s  ;
 }
 
 .secondBack{
@@ -418,6 +446,7 @@ button:focus{
     font-size: 25px;
     line-height: 150%;
     color: rgba(0,0,0,0.7);
+    -webkit-animation :ShowThings 1.95s  ;
 }
 
 .Footer{
@@ -433,3 +462,4 @@ button:focus{
     width: 28px;
     height: 28px;
 }
+
